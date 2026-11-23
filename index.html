@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="BIN's Adventure – Trekking, camping và du lịch trải nghiệm. Khám phá thiên nhiên, kết nối cộng đồng.">
+  <title>BIN's Adventure | Trekking & Adventure</title>
+  <style>
+    :root{--bg:#101010;--panel:#191919;--gold:#f5a623;--gold2:#ffc04d;--text:#f7f4ed;--muted:#b9b4a9;--line:#34312b}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(16,16,16,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;letter-spacing:.5px;font-size:21px}.brand span{color:var(--gold)}
+    .navlinks{display:flex;gap:25px;color:#ddd;font-size:14px}.navlinks a:hover{color:var(--gold)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:#17120a;font-weight:800;padding:13px 20px;border-radius:5px;border:0;cursor:pointer;transition:.2s}
+    .btn:hover{background:var(--gold2);transform:translateY(-2px)}.btn.outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+    .hero{min-height:630px;display:flex;align-items:center;position:relative;isolation:isolate;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:130px;background:linear-gradient(transparent,var(--bg));z-index:-1}
+    .eyebrow{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:3px;text-transform:uppercase}
+    h1{font-size:clamp(42px,7vw,78px);line-height:1.03;margin:18px 0;max-width:760px;text-transform:uppercase;letter-spacing:-2px}
+    h1 em{font-style:normal;color:var(--gold)}.hero p{max-width:600px;color:#e1ded7;font-size:18px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    section{padding:82px 0}.section-head{max-width:680px;margin-bottom:34px}.section-head h2{font-size:clamp(30px,4vw,46px);line-height:1.1;margin:10px 0}.section-head p{color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .tour{background:var(--panel);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+    .tour img{width:100%;height:225px;object-fit:cover;display:block;filter:saturate(.85)}
+    .tour-body{padding:22px}.tour h3{margin:0 0 9px;font-size:21px}.tour p{margin:0;color:var(--muted);font-size:14px}
+    .tag{display:inline-block;color:var(--gold);font-size:11px;font-weight:800;letter-spacing:1px;margin-bottom:10px;text-transform:uppercase}
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .feature{padding:23px 18px;border:1px solid var(--line);border-radius:8px;background:#151515}
+    .feature .ico{font-size:27px;color:var(--gold)}.feature h3{font-size:17px;margin:8px 0}.feature p{font-size:13px;color:var(--muted);margin:0}
+    .band{background:linear-gradient(110deg,#2a1c0b,#17130d);border-top:1px solid #49371c;border-bottom:1px solid #49371c}
+    .band-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}.band h2{font-size:clamp(28px,4vw,42px);margin:8px 0}.band p{color:#d0c6b5;margin:0}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+    .contact-card{background:var(--panel);border:1px solid var(--line);padding:28px;border-radius:9px}
+    .contact-row{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:15px}.contact-row:last-child{border:0}
+    .contact-row span{color:var(--muted)}.contact-row strong{color:var(--gold);text-align:right}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
+    .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .small{font-size:12px;color:#8f897e}
+    @media(max-width:800px){.navlinks{display:none}.grid{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr 1fr}.hero{min-height:590px}.band-inner{align-items:flex-start;flex-direction:column}.contact{grid-template-columns:1fr}}
+    @media(max-width:520px){nav{height:66px}.brand{font-size:18px}.grid{grid-template-columns:1fr}.tour img{height:210px}section{padding:62px 0}.hero p{font-size:16px}.actions .btn{width:100%}.features{gap:10px}.feature{padding:17px 14px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap"><nav>
+    <a class="brand" href="#top">BIN's <span>ADVENTURE</span></a>
+    <div class="navlinks"><a href="#about">Giới thiệu</a><a href="#tours">Hành trình</a><a href="#why">Vì sao chọn chúng tôi</a><a href="#contact">Liên hệ</a></div>
+    <a class="btn" href="tel:0372174421">Gọi tư vấn</a>
+  </nav></div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Explore · Experience · Connect</div>
+      <h1>Đi để thấy<br><em>thế giới rộng lớn</em></h1>
+      <p>Những cung đường trekking, đêm camping giữa thiên nhiên và hành trình khám phá đáng nhớ. Cùng BIN's Adventure bước ra khỏi vùng an toàn.</p>
+      <div class="actions"><a class="btn" href="#tours">Khám phá hành trình <span>↗</span></a><a class="btn outline" href="https://zalo.me/0372174421" target="_blank" rel="noopener">Nhắn Zalo</a></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">About us</div><h2>Không chỉ là một chuyến đi.</h2><p>BIN's Adventure kết nối những người yêu thiên nhiên qua các hoạt động trekking, camping và du lịch trải nghiệm. Mỗi hành trình là cơ hội để khám phá vùng đất mới, thử thách bản thân và tạo nên những tình bạn đẹp.</p></div>
+    </div>
+  </section>
+
+  <section id="tours" style="padding-top:15px">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Adventure collection</div><h2>Chọn hành trình của bạn</h2><p>Một vài loại hình trải nghiệm tiêu biểu. Lịch khởi hành và cung đường cụ thể sẽ được tư vấn theo từng đoàn.</p></div>
+      <div class="grid">
+        <article class="tour"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=80" alt="Nhóm trekking trên đường mòn núi"><div class="tour-body"><div class="tag">Trekking</div><h3>Chinh phục núi rừng</h3><p>Khám phá những cung đường xanh, vượt thử thách và ngắm nhìn thiên nhiên từ những góc nhìn khác biệt.</p></div></article>
+        <article class="tour"><img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=900&q=80" alt="Lều cắm trại giữa thiên nhiên"><div class="tour-body"><div class="tag">Camping</div><h3>Đêm giữa đại ngàn</h3><p>Dựng lều, quây quần bên nhau, thức dậy giữa không gian trong lành và bình yên.</p></div></article>
+        <article class="tour"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Phong cảnh thiên nhiên hùng vĩ"><div class="tour-body"><div class="tag">Discovery</div><h3>Du lịch trải nghiệm</h3><p>Tìm hiểu văn hóa bản địa, khám phá cảnh đẹp và lưu lại những câu chuyện trên đường đi.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Why BIN's Adventure</div><h2>Đi cùng nhau, trải nghiệm trọn vẹn hơn.</h2></div>
+      <div class="features">
+        <div class="feature"><div class="ico">⛰</div><h3>Cung đường chọn lọc</h3><p>Ưu tiên trải nghiệm phù hợp với thể lực và mục tiêu của đoàn.</p></div>
+        <div class="feature"><div class="ico">✦</div><h3>Đồng hành tận tâm</h3><p>Hỗ trợ thông tin, chuẩn bị và hướng dẫn trước chuyến đi.</p></div>
+        <div class="feature"><div class="ico">⌁</div><h3>Đề cao an toàn</h3><p>Phổ biến quy định, trang bị và phương án tổ chức phù hợp.</p></div>
+        <div class="feature"><div class="ico">♡</div><h3>Kết nối cộng đồng</h3><p>Gặp gỡ những người yêu vận động và thiên nhiên.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap band-inner"><div><div class="eyebrow">Your next story starts here</div><h2>Sẵn sàng cho chuyến đi tiếp theo?</h2><p>Gửi tin nhắn để nhận tư vấn cung đường, lịch trình và chi phí.</p></div><a class="btn" href="https://zalo.me/0372174421" target="_blank" rel="noopener">Trao đổi ngay ↗</a></div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Get in touch</div><h2>Kết nối với BIN's Adventure</h2><p>Liên hệ để được tư vấn hành trình phù hợp cho cá nhân, nhóm bạn hoặc đoàn riêng.</p></div>
+      <div class="contact">
+        <div class="contact-card">
+          <div class="contact-row"><span>Điện thoại</span><strong>0372 174 421</strong></div>
+          <div class="contact-row"><span>Zalo</span><strong><a href="https://zalo.me/0372174421" target="_blank" rel="noopener">0372 174 421 ↗</a></strong></div>
+          <div class="contact-row"><span>Facebook</span><strong><a href="https://www.facebook.com/share/1EWmSaLXJf/" target="_blank" rel="noopener">Fanpage BIN's Adventure ↗</a></strong></div>
+          <p class="small">* Thay liên kết Facebook mẫu bằng đường dẫn Fanpage chính thức trước khi công bố.</p>
+        </div>
+        <div><h3 style="margin-top:0">Mỗi hành trình là một câu chuyện.</h3><p style="color:var(--muted)">Hãy cho chúng tôi biết bạn muốn trekking, camping hay khám phá ở đâu. BIN's Adventure sẽ cùng bạn lên kế hoạch cho trải nghiệm tiếp theo.</p><div class="actions"><a class="btn" href="tel:0372174421">☎ Gọi 0372 174 421</a><a class="btn outline" href="https://zalo.me/0372174421" target="_blank" rel="noopener">Chat Zalo</a></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap foot"><div><strong style="color:var(--text)">BIN's Adventure</strong><br><span>Explore · Experience · Connect</span></div><div>© 2026 BIN's Adventure. All rights reserved.</div></div></footer>
+</body>
+</html>
