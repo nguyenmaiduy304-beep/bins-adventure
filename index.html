@@ -16,7 +16,7 @@
     .navlinks{display:flex;gap:25px;color:#ddd;font-size:14px}.navlinks a:hover{color:var(--gold)}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:#17120a;font-weight:800;padding:13px 20px;border-radius:5px;border:0;cursor:pointer;transition:.2s}
     .btn:hover{background:var(--gold2);transform:translateY(-2px)}.btn.outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
-    .hero{min-height:630px;display:flex;align-items:center;position:relative;isolation:isolate;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero{min-height:630px;display:flex;align-items:center;position:relative;isolation:isolate;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=2000&q=85') center/cover}
     .hero:after{content:"";position:absolute;inset:auto 0 0;height:130px;background:linear-gradient(transparent,var(--bg));z-index:-1}
     .eyebrow{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:3px;text-transform:uppercase}
     h1{font-size:clamp(42px,7vw,78px);line-height:1.03;margin:18px 0;max-width:760px;text-transform:uppercase;letter-spacing:-2px}
@@ -40,6 +40,17 @@
     footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
     .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .small{font-size:12px;color:#8f897e}
+
+    .register{background:linear-gradient(145deg,#1b1a17,#111);border:1px solid #57401e;border-radius:10px;padding:clamp(20px,4vw,36px)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}
+    .field label{font-size:13px;color:#e6d8bf;font-weight:700}
+    .field input,.field select,.field textarea{width:100%;background:#0f0f0f;border:1px solid #484033;color:#fff;border-radius:5px;padding:13px;font:inherit;outline:none}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+    .field textarea{min-height:95px;resize:vertical}
+    .form-note{font-size:12px;color:#aaa397;margin:12px 0 0}
+    @media(max-width:600px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+
     @media(max-width:800px){.navlinks{display:none}.grid{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr 1fr}.hero{min-height:590px}.band-inner{align-items:flex-start;flex-direction:column}.contact{grid-template-columns:1fr}}
     @media(max-width:520px){nav{height:66px}.brand{font-size:18px}.grid{grid-template-columns:1fr}.tour img{height:210px}section{padding:62px 0}.hero p{font-size:16px}.actions .btn{width:100%}.features{gap:10px}.feature{padding:17px 14px}}
   </style>
@@ -48,7 +59,7 @@
 <header>
   <div class="wrap"><nav>
     <a class="brand" href="#top">BIN's <span>ADVENTURE</span></a>
-    <div class="navlinks"><a href="#about">Giới thiệu</a><a href="#tours">Hành trình</a><a href="#why">Vì sao chọn chúng tôi</a><a href="#contact">Liên hệ</a></div>
+    <div class="navlinks"><a href="#about">Giới thiệu</a><a href="#tours">Hành trình</a><a href="#why">Vì sao chọn chúng tôi</a><a href="#register">Đăng ký tour</a><a href="#contact">Liên hệ</a></div>
     <a class="btn" href="tel:0372174421">Gọi tư vấn</a>
   </nav></div>
 </header>
@@ -58,7 +69,7 @@
       <div class="eyebrow">Explore · Experience · Connect</div>
       <h1>Đi để thấy<br><em>thế giới rộng lớn</em></h1>
       <p>Những cung đường trekking, đêm camping giữa thiên nhiên và hành trình khám phá đáng nhớ. Cùng BIN's Adventure bước ra khỏi vùng an toàn.</p>
-      <div class="actions"><a class="btn" href="#tours">Khám phá hành trình <span>↗</span></a><a class="btn outline" href="https://zalo.me/0372174421" target="_blank" rel="noopener">Nhắn Zalo</a></div>
+      <div class="actions"><a class="btn" href="#tours">Khám phá hành trình <span>↗</span></a><a class="btn outline" href="#register">Đăng ký tour</a></div>
     </div>
   </section>
 
@@ -79,6 +90,18 @@
     </div>
   </section>
 
+
+  <section id="gallery" style="padding-top:15px">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Moments on the trail</div><h2>Khoảnh khắc đáng nhớ</h2><p>Mỗi bước chân mở ra một khung cảnh mới – từ đường mòn xuyên rừng đến những đêm cắm trại dưới trời sao.</p></div>
+      <div class="grid">
+        <article class="tour"><img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80" alt="Con đường mòn xuyên rừng xanh"></article>
+        <article class="tour"><img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80" alt="Thung lũng núi nhìn từ trên cao"></article>
+        <article class="tour"><img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=900&q=80" alt="Lều camping giữa thiên nhiên"></article>
+      </div>
+    </div>
+  </section>
+
   <section id="why">
     <div class="wrap">
       <div class="section-head"><div class="eyebrow">Why BIN's Adventure</div><h2>Đi cùng nhau, trải nghiệm trọn vẹn hơn.</h2></div>
@@ -93,6 +116,28 @@
 
   <section class="band">
     <div class="wrap band-inner"><div><div class="eyebrow">Your next story starts here</div><h2>Sẵn sàng cho chuyến đi tiếp theo?</h2><p>Gửi tin nhắn để nhận tư vấn cung đường, lịch trình và chi phí.</p></div><a class="btn" href="https://zalo.me/0372174421" target="_blank" rel="noopener">Trao đổi ngay ↗</a></div>
+  </section>
+
+
+  <section id="register">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Book your adventure</div><h2>Đăng ký tham gia tour</h2><p>Để lại thông tin, BIN's Adventure sẽ liên hệ tư vấn lịch trình và chi phí phù hợp.</p></div>
+      <div class="register">
+        <form id="tourForm">
+          <div class="form-grid">
+            <div class="field"><label for="fullname">Họ và tên *</label><input id="fullname" name="fullname" required placeholder="Tên của bạn"></div>
+            <div class="field"><label for="phone">Số điện thoại *</label><input id="phone" name="phone" type="tel" required pattern="[0-9+ .-]{9,15}" placeholder="Số điện thoại liên hệ"></div>
+            <div class="field"><label for="tour">Tour quan tâm *</label><select id="tour" name="tour" required><option value="">Chọn loại trải nghiệm</option><option>Trekking</option><option>Camping</option><option>Du lịch trải nghiệm</option><option>Tour thiết kế riêng</option></select></div>
+            <div class="field"><label for="people">Số người tham gia</label><select id="people" name="people"><option>1 người</option><option selected>2 người</option><option>3–5 người</option><option>6–10 người</option><option>Trên 10 người</option></select></div>
+            <div class="field"><label for="date">Thời gian dự kiến</label><input id="date" name="date" type="date"></div>
+            <div class="field"><label for="destination">Điểm đến mong muốn</label><input id="destination" name="destination" placeholder="Ví dụ: Ngọc Linh, Hải Vân..."></div>
+            <div class="field full"><label for="note">Yêu cầu thêm</label><textarea id="note" name="note" placeholder="Thể lực, kinh nghiệm trekking hoặc mong muốn của bạn..."></textarea></div>
+            <div class="field full"><button class="btn" type="submit">GỬI ĐĂNG KÝ QUA ZALO ↗</button></div>
+          </div>
+          <p class="form-note">Khi nhấn gửi, website chuẩn bị nội dung đăng ký và mở Zalo BIN's Adventure để bạn gửi tin nhắn. Thông tin chưa được lưu trên website.</p>
+        </form>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
@@ -111,5 +156,26 @@
   </section>
 </main>
 <footer><div class="wrap foot"><div><strong style="color:var(--text)">BIN's Adventure</strong><br><span>Explore · Experience · Connect</span></div><div>© 2026 BIN's Adventure. All rights reserved.</div></div></footer>
+
+<script>
+document.getElementById('tourForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const data = new FormData(this);
+  const message = [
+    "ĐĂNG KÝ TOUR BIN'S ADVENTURE",
+    'Họ tên: ' + data.get('fullname'),
+    'Điện thoại: ' + data.get('phone'),
+    'Tour: ' + data.get('tour'),
+    'Số người: ' + data.get('people'),
+    'Thời gian: ' + (data.get('date') || 'Chưa xác định'),
+    'Điểm đến: ' + (data.get('destination') || 'Chưa xác định'),
+    'Yêu cầu: ' + (data.get('note') || 'Không có')
+  ].join('\n');
+  try { if (navigator.clipboard) navigator.clipboard.writeText(message); } catch(e) {}
+  alert("Đã chuẩn bị nội dung đăng ký. Zalo sẽ mở; vui lòng dán nội dung tin nhắn và gửi cho BIN's Adventure.");
+  window.open('https://zalo.me/0372174421', '_blank', 'noopener');
+});
+</script>
+
 </body>
 </html>
