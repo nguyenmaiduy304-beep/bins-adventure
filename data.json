@@ -1,0 +1,43 @@
+{
+  "tours": [
+    {
+      "name": "Đỉnh Bàn Cờ",
+      "tag": "Trekking · Đà Nẵng",
+      "description": "Khám phá điểm ngắm toàn cảnh thành phố Đà Nẵng từ trên cao.",
+      "price": "180.000đ",
+      "selfPrice": ""
+    },
+    {
+      "name": "Làng Aur",
+      "tag": "Trekking · Văn hóa bản địa",
+      "description": "Khám phá làng Aur và trải nghiệm thiên nhiên, văn hóa bản địa.",
+      "price": "1.550.000đ",
+      "selfPrice": "850.000đ"
+    },
+    {
+      "name": "Nóc Tu Nấc",
+      "tag": "Trekking",
+      "description": "Hành trình trekking khám phá núi rừng và cảnh quan vùng cao.",
+      "price": "1.450.000đ",
+      "selfPrice": "850.000đ"
+    },
+    {
+      "name": "Đỉnh Hòn Tàu",
+      "tag": "Trekking",
+      "description": "Chinh phục đỉnh Hòn Tàu, trải nghiệm cung đường trekking giữa thiên nhiên.",
+      "price": "950.000đ",
+      "selfPrice": "650.000đ"
+    },
+    {
+      "name": "Đỉnh Ngọc Linh",
+      "tag": "Trekking · 2.605m",
+      "description": "Khám phá vùng núi Ngọc Linh và chinh phục một trong những đỉnh núi nổi bật của miền Trung.",
+      "price": "3.700.000đ",
+      "selfPrice": ""
+    }
+  ],
+  "phone": "0372174421",
+  "facebook": "https://www.facebook.com/share/1EWmSaLXJf/",
+  "heroImage": "IMG_20260619_111031.jpg",
+  "priceNote": "Giá tour có thể điều chỉnh nhẹ tại thời điểm khởi hành nếu giá nhiên liệu biến động lớn."
+}
