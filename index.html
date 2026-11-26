@@ -212,5 +212,28 @@ document.getElementById('tourForm').addEventListener('submit', function(event) {
 });
 </script>
 
+
+<script>
+(async function(){
+ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ try{
+  const r=await fetch('data.json?v='+Date.now(),{cache:'no-store'});if(!r.ok)return;const cfg=await r.json();
+  const phone=String(cfg.phone||'0372174421').replace(/\D/g,''),zalo='https://zalo.me/'+phone;
+  const grid=document.querySelector('#tour-prices .price-grid');
+  if(grid&&Array.isArray(cfg.tours)){
+   grid.innerHTML=cfg.tours.map(t=>'<article class="price-card"><div class="tag">'+esc(t.tag)+'</div><h3>'+esc(t.name)+'</h3><p>'+esc(t.description)+'</p><div class="price">'+esc(t.price)+' <span class="price-sub">/ người</span></div>'+(t.selfPrice?'<div class="price-sub">Tự túc di chuyển: <strong>'+esc(t.selfPrice)+'/người</strong></div>':'')+'<a class="btn" style="margin-top:18px" href="#register" data-tour="'+esc(t.name)+'">ĐĂNG KÝ TOUR</a></article>').join('');
+   grid.querySelectorAll('[data-tour]').forEach(b=>b.addEventListener('click',()=>{const s=document.getElementById('tour');if(s)s.value=b.dataset.tour;}));
+   const s=document.getElementById('tour');if(s)s.innerHTML='<option value="">Chọn tour quan tâm</option>'+cfg.tours.map(t=>'<option>'+esc(t.name)+'</option>').join('')+'<option>Camping / Tour thiết kế riêng</option>';
+  }
+  const note=document.querySelector('#tour-prices .price-note');if(note&&cfg.priceNote)note.textContent='* '+cfg.priceNote+' Vui lòng liên hệ để xác nhận giá và lịch khởi hành.';
+  document.querySelectorAll('a[href^="tel:"]').forEach(a=>a.href='tel:'+phone);
+  document.querySelectorAll('a[href*="zalo.me/"]').forEach(a=>a.href=zalo);
+  const fb=document.querySelector('.contact-card a[href*="facebook.com"]');if(fb&&cfg.facebook)fb.href=cfg.facebook;
+  const cp=document.querySelector('.contact-row strong');if(cp)cp.textContent=phone.replace(/(\d{4})(\d{3})(\d{3})/,'$1 $2 $3');
+  if(cfg.heroImage){const h=document.querySelector('.hero');if(h)h.style.backgroundImage="linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.45)),url('"+String(cfg.heroImage).replace(/['"()\\]/g,'')+"')";}
+  const form=document.getElementById('tourForm');if(form)form.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();const d=new FormData(form);const msg=["ĐĂNG KÝ TOUR BIN'S ADVENTURE",'Họ tên: '+d.get('fullname'),'Điện thoại: '+d.get('phone'),'Tour: '+d.get('tour'),'Số người: '+d.get('people'),'Thời gian: '+(d.get('date')||'Chưa xác định'),'Điểm đến: '+(d.get('destination')||'Chưa xác định'),'Yêu cầu: '+(d.get('note')||'Không có')].join('\n');if(navigator.clipboard)navigator.clipboard.writeText(msg).catch(()=>{});alert('Đã chuẩn bị nội dung đăng ký. Zalo sẽ mở; vui lòng dán nội dung và gửi tin nhắn.');window.open(zalo,'_blank','noopener');},true);
+ }catch(e){console.warn('Lỗi tải dữ liệu website',e);}
+})();
+</script>
 </body>
 </html>
